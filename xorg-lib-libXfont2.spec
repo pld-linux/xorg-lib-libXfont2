@@ -1,18 +1,19 @@
 Summary:	X font library version 2
 Summary(pl.UTF-8):	Biblioteka fontów X w wersji 2
 Name:		xorg-lib-libXfont2
-Version:	2.0.3
+Version:	2.0.4
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	https://xorg.freedesktop.org/releases/individual/lib/libXfont2-%{version}.tar.bz2
-# Source0-md5:	b7ca87dfafeb5205b28a1e91ac3efe85
+# Source0-md5:	00516bed7ec1453d56974560379fff2f
 URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
 BuildRequires:	docbook-dtd44-xml
 BuildRequires:	freetype-devel >= 2
+BuildRequires:	libbsd-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xmlto >= 0.0.22
@@ -92,6 +93,8 @@ Pakiet zawiera statyczną bibliotekę libXfont2.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
+# FIXME: drop this when configure supports libbsd properly
+CPPFLAGS="%{rpmcppflags} $(pkg-config --cflags libbsd-overlay)"
 %configure \
 	--with-bzip2
 
@@ -113,7 +116,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog README
+%doc AUTHORS COPYING ChangeLog README.md
 %attr(755,root,root) %{_libdir}/libXfont2.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libXfont2.so.2
 
