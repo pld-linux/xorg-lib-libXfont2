@@ -1,12 +1,12 @@
 Summary:	X font library version 2
 Summary(pl.UTF-8):	Biblioteka fontów X w wersji 2
 Name:		xorg-lib-libXfont2
-Version:	2.0.8
+Version:	2.0.9
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	https://xorg.freedesktop.org/releases/individual/lib/libXfont2-%{version}.tar.xz
-# Source0-md5:	52a9b20ba3b74198728f6c1781f9ad36
+# Source0-md5:	134b3f673f6ecd3e67c0e892dd1a89e8
 URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.70
 BuildRequires:	automake
