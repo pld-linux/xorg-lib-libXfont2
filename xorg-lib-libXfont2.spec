@@ -11,7 +11,7 @@ URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.70
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
-BuildRequires:	docbook-dtd44-xml
+BuildRequires:	docbook-dtd43-xml
 BuildRequires:	freetype-devel >= 2
 # or libbsd-devel (for reallocarray() and strlcat())
 BuildRequires:	glibc-devel >= 6:2.38
